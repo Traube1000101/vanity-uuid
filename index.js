@@ -2,7 +2,7 @@ const { v4: uuidv4 } = require("uuid");
 require("colors");
 
 // Change these Variables
-const UUID_REGEX = /^(b00b5420|420b00b5|42069420|4206921|6942021|21420).*/; // Regex of memefied UUIDs to find
+const UUID_REGEX = /^(42069|42021)/; // Regex of memefied UUIDs to find
 const NUMBER_OF_UUIDS = 5; // Number of UUIDs to generate
 
 const validUUIDs = [];
