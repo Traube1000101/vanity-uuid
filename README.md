@@ -2,5 +2,5 @@
 
 A stupid, probably inefficient UUIDv4 generator with the drip.
 
-Example:
+Example:  
 ![](example.webp)
