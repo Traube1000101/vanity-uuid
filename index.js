@@ -1,10 +1,12 @@
 const { v4: uuidv4 } = require("uuid");
-const VALID_UUID_REGEX = /^b00b5.*69.*/;
+require("colors");
 
-const numberOfUUIDs = 1;
+// Change these Variables
+const UUID_REGEX = /^(b00b5420|420b00b5|42069420|4206921|6942021|21420).*/; // Regex of memefied UUIDs to find
+const NUMBER_OF_UUIDS = 5; // Number of UUIDs to generate
+
 const validUUIDs = [];
 let iterations = 0;
-
 let performanceMonitor = {
   start: performance.now(),
   getDuration() {
@@ -12,10 +14,11 @@ let performanceMonitor = {
   },
 };
 
-while (validUUIDs.length < numberOfUUIDs) {
+while (validUUIDs.length < NUMBER_OF_UUIDS) {
   const uuid = uuidv4();
-  if (VALID_UUID_REGEX.test(uuid)) {
+  if (UUID_REGEX.test(uuid)) {
     validUUIDs.push(uuid);
+    if (NUMBER_OF_UUIDS < 1) console.log(`Found valid UUID: ${uuid}`);
   }
   iterations++;
 }
@@ -23,6 +26,5 @@ const duration = performanceMonitor.getDuration();
 console.log(
   `Generated a total of ${iterations} UUIDs in ${duration.toFixed(2)}ms and found ${
     validUUIDs.length
-  } valid UUIDs:\n`,
-  validUUIDs
+  } valid UUID${validUUIDs.length > 1 ? "s" : ""}:\n${validUUIDs.join("\n").cyan}`
 );
