@@ -18,7 +18,7 @@ while (validUUIDs.length < NUMBER_OF_UUIDS) {
   const uuid = uuidv4();
   if (UUID_REGEX.test(uuid)) {
     validUUIDs.push(uuid);
-    if (NUMBER_OF_UUIDS < 1) console.log(`Found valid UUID: ${uuid}`);
+    if (NUMBER_OF_UUIDS > 1) console.log(`Found valid UUID: ${uuid}`);
   }
   iterations++;
 }
